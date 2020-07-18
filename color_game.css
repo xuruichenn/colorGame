@@ -1,0 +1,157 @@
+body {
+    background-color: black;
+    margin: 0;
+    font-family: "Avenir", sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin: 0;
+    padding: 25px 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    background-color: black;
+    margin: 0;
+    padding-bottom: 2%;
+    
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.square {
+    width: 30%;
+    border-radius: 10%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#container {
+    max-width: 600px;
+    margin: 2% auto; 
+}
+
+#banner {
+    text-align: center;
+    height: 1.6em;
+    
+}
+
+.selected {
+    background-color: white;
+    color: black;
+}
+
+#colorDisplay {
+    font-size: 250%;
+}
+
+button {
+    border: solid white;
+    border-radius: 15%;
+    background-color: black;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 500;
+    font-size: inherit;
+    color: white;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.square:hover {
+    cursor: pointer;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
+    color: white;
+}
+
+.pulses {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.shines:after {
+    animation: shine 4s ease-in-out infinite;
+    animation-fill-mode: forwards;  
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+    
+    background: rgba(255, 255, 255, 0.20);
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+}
+
+.shines:active:after {
+    opacity: 0;
+}
+
+@keyframes shine{
+    10% {
+      opacity: 1;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+      transition-duration: 2s, 2s, 2s;
+      transition-timing-function: ease;
+    }
+    50% {
+        opacity: 0.45;
+        top: -30%;
+        left: -30%;
+        transition-property: left, top, opacity;
+        transition-duration: 2s, 2s, 2s;
+        transition-timing-function: ease;
+    }
+    100% {
+      opacity: 0;
+      top: -30%;
+      left: -30%;
+      transition-property: left, top, opacity;
+    }
+  }
